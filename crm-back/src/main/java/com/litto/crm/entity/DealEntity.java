@@ -46,8 +46,7 @@ public class DealEntity {
     @JoinColumn(name = "company_id")
     private CompanyEntity company;
 
-    @OneToMany
-    @JoinColumn(name = "activity_id")
+    @OneToMany(mappedBy = "deal")
     private List<ActivityEntity> listActivities;
 
     // =================================================================================================================
