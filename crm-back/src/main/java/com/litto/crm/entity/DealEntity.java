@@ -1,5 +1,6 @@
 package com.litto.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -47,6 +48,7 @@ public class DealEntity {
     private CompanyEntity company;
 
     @OneToMany(mappedBy = "deal")
+    @JsonManagedReference
     private List<ActivityEntity> listActivities;
 
     // =================================================================================================================

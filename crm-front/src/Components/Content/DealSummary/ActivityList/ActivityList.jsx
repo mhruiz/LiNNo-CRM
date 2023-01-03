@@ -1,13 +1,13 @@
 import styles from "./ActivityList.module.css";
 import ActivityItem from "./ActivityItem/ActivityItem";
-function ActivityList({ data }) {
+function ActivityList(data) {
   const activityData = data;
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        {activityData &&
-          activityData.map((activity) => {
+        {activityData && activityData.listActivities &&
+          activityData.listActivities.map((activity) => {
             return <ActivityItem data={activity} />;
           })}
       </div>

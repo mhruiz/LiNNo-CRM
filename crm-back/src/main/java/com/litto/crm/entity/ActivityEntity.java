@@ -1,9 +1,11 @@
 package com.litto.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +25,8 @@ public class ActivityEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JsonBackReference
     private DealEntity deal;
 
     @Column(name = "type")

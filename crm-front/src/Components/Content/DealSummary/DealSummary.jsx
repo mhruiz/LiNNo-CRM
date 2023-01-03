@@ -24,12 +24,7 @@ function DealSummary(data) {
     buttonCompany = <div className={styles.newButton}> + NEW COMPANY </div>;
   }
 
-  let activities;
-  if (data.data) {
-    activities = <ActivityList {...data.data} />;
-  } else {
-    activities = <></>;
-  }
+  let activities = <ActivityList {...data.data} />;
 
   // const company = {
   //   // name: "Solera",
