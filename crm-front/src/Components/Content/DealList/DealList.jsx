@@ -5,12 +5,6 @@ import styles from "./DealList.module.css";
 
 function DealList({ title, data, setDealSelected }) {
   const dealsList = data;
-  const [currentDeal, setCurrentDeal] = useState();
-
-  function changeDealSelected(data) {
-    setCurrentDeal(data);
-    setDealSelected(currentDeal);
-  }
 
   return (
     <div className={styles.wrapper}>
@@ -19,7 +13,7 @@ function DealList({ title, data, setDealSelected }) {
         {dealsList &&
           dealsList.map((deal) => {
             return (
-              <DealItem data={deal} changeDealSelected={changeDealSelected} />
+              <DealItem data={deal} changeDealSelected={setDealSelected} />
             );
           })}
       </div>
